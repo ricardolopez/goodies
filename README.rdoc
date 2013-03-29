@@ -1,0 +1,1 @@
+This repository contains *Goodies*, an online portfolio for arts and crafts artists to display their work including pictures, descriptions, prices, as well as contact information so anyone interested in their work can contact them with further inquiry!
