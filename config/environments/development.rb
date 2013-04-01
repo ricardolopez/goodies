@@ -34,4 +34,9 @@ Goodies::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  Paperclip::Attachment.default_options[:storage] = :fog
+  Paperclip::Attachment.default_options[:fog_credentials] = {:provider => "Local", :local_root => "#{Rails.root}/public"}
+  Paperclip::Attachment.default_options[:fog_directory] = "/public/images"
+  Paperclip::Attachment.default_options[:fog_host] = "http://localhost:3000"
 end

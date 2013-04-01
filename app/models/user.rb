@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
   before_save :encrypt_password
   
-  attr_accessible :username, :password_hash, :salt, :password, :password_confirmation, :first_name, :last_name
+  attr_accessible :username, :password_hash, :salt, :password, :password_confirmation, :first_name, :last_name, :avatar
   attr_accessor :password, :password_hash
+
+  has_attached_file :avatar
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
