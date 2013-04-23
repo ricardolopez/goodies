@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.paginate :page => params[:page], :per_page => 1, :order => :name
   end
 
   def show
@@ -23,6 +23,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(params[:product])
+    if @product.save
+      redirect_to products_url
+    else
+      render "new"
+    end
   end
 
   def update

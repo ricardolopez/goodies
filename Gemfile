@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'paperclip', "~> 3.0"
 gem 'fog'
+gem 'will_paginate', "~> 3.0"
 
 
 # Gems used only for assets and not required

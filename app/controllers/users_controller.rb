@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.order(:username)
+    @users = User.paginate :page => params[:page], :per_page => 1, :order => :username
   end
 
   def new

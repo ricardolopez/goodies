@@ -3,3 +3,5 @@
       <li><%= link_to user.username, user_path(user.id) %></li>
   <% end %>
 </ul>
+
+<%= will_paginate @users %>
