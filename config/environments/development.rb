@@ -35,6 +35,7 @@ Goodies::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  Paperclip.options[:command_path] = "/c/Ruby193/lib/ruby/gems/1.9.1/gems/ImageMagick-6.8.4-Q16/convert"
   Paperclip::Attachment.default_options[:storage] = :fog
   Paperclip::Attachment.default_options[:fog_credentials] = {:provider => "Local", :local_root => "#{Rails.root}/public"}
   Paperclip::Attachment.default_options[:fog_directory] = "/public/images"

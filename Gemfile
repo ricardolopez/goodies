@@ -8,7 +8,8 @@ gem 'rails', '3.2.12'
 gem 'sqlite3'
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
-gem 'paperclip'
+gem 'paperclip', "~> 3.0"
+gem 'fog'
 
 
 # Gems used only for assets and not required

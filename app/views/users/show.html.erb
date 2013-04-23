@@ -6,6 +6,7 @@
 	<% end %>
 
 	<%= image_tag(@user.avatar.url) %>
+	<% puts @user.avatar.url %>
 
 	<% if current_user == @user %>
 	<%= link_to 'Edit', edit_user_path(@user.id) %>
