@@ -4,8 +4,16 @@ gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+#http://goodies-app.herokuapp.com/ | git@heroku.com:goodies-app.git
 
-gem 'sqlite3'
+
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+end
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'paperclip', "~> 3.0"
