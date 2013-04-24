@@ -1,35 +1,22 @@
-<h1>Listing products</h1>
-
+<div class="suggestions">Log-in to add products for everyone to see!</div>
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Description</th>
-    <th>Date</th>
-    <th>User</th>
-    <th>View count</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <tbody>
+  <% @products.each_with_index do |product, index| %>
+  <% if (index%6) == 0 %>
+    <tr>
+  <% end %>
+        <td>
+            <li class="product-frame">
+                <div class="product-name"><%= link_to product.name, product_path(product.id) %></div>
+                <div class="product-price"><%= product.price %>
+            </li>
+        </td>
+  <% if (index%6) == 5 %>
+    </tr>
+  <% end %>
 
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.price %></td>
-    <td><%= product.description %></td>
-    <td><%= product.date %></td>
-    <td><%= product.user_id %></td>
-    <td><%= product.view_count %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% end %>
+</tbody>
 </table>
 
-<%= will_paginate @products %>
-
-<br />
-
-<%= link_to 'New Product', new_product_path %>
+<%= will_paginate @products, :class => 'digg' %>

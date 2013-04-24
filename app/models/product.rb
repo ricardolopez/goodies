@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  
+  belongs_to :user
 
   attr_accessible :date, :description, :name, :price, :user_id, :view_count
 

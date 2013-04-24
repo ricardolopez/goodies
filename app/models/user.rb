@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :products
   
   attr_accessible :username, :password_hash, :salt, :password, :password_confirmation, :first_name, :last_name, :avatar
   attr_accessor :password, :avatar

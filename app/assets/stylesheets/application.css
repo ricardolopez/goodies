@@ -3,7 +3,7 @@
 }
 
 #store {
-	background-color: white;
+	background-color: gray;
 }
 
 #content {
@@ -16,6 +16,7 @@
 #main-nav {	
 	text-align: center;
 	height: 20px;
+
 }
 
 #main-nav ul.nav-pills { display: inline-block; }
@@ -26,4 +27,41 @@
 
 #main-nav .hero-unit {
 	margin-top: 10px;
+}
+
+.user-frame, .product-frame {
+	width: 150px;
+	height: 150px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgray;
+	list-style-type: none;
+	float: left;
+	margin: 4px;
+}
+
+.suggestions {
+	text-align: center;
+}
+
+.user-image {
+	padding-top: 5px;
+	text-align: center;
+}
+
+.user-name {
+	padding-top: 90px;
+	text-align: center;
+}
+
+.product-name {
+	padding-top: 90px;
+	padding-left: 5px;
+	float: left;
+}
+
+.product-price {
+	padding-top: 90px;
+	padding-right: 5px;
+	float: right; 
 }

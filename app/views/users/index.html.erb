@@ -1,7 +1,26 @@
-<ul>
-  <% @users.each do |user| %>
-      <li><%= link_to user.username, user_path(user.id) %></li>
-  <% end %>
-</ul>
 
-<%= will_paginate @users %>
+<div class="suggestions">Browse through other users to find new goodies!</div>
+
+<%= will_paginate @users, :class => 'pagination pagination-centered' %>
+
+<table>
+	<tbody>
+  <% @users.each_with_index do |user, index| %>
+  <% if (index%6) == 0 %>
+  	<tr>
+  <% end %>
+  		<td>
+  			<li class="user-frame">
+  			<div class="user-image"><%= image_tag(user.avatar.url) %></div>
+    		<div class="user-name"><%= link_to user.username, user_path(user.id) %></div>
+    		</li>
+    	</td>
+  <% if (index%6) == 5 %>
+  	</tr>
+  <% end %>
+
+  <% end %>
+</tbody>
+</table>
+
+<%= will_paginate @users, :class => 'pagination pagination-centered' %>

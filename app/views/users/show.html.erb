@@ -10,5 +10,13 @@
 
 	<% if current_user == @user %>
 	<%= link_to 'Edit', edit_user_path(@user.id) %>
+	<p><%= link_to "Add new product", :controller => :products, :action => :new %></p>
 	<% end %>
+
+
+	<div id="my_products">
+		<h4><%= @user.username %>'s Products</h4>
+		<%= render :partial => 'products/list', :collection => @my_products %>
+	</div>
+
 </div>
