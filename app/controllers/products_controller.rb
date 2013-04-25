@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @product.update_attribute(:view_count, @product.view_count+1)
   end
 
   def new
@@ -13,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(params[:user_id])
     if @user == current_user
       @product = Product.find(params[:id])
     else
@@ -21,10 +22,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def most_recent
+    @products = Product.paginate :page => params[:page], :per_page => 18, :order => 'created_at DESC'
+    render "index"
+  end
+
+  def most_popular
+    @products = Product.paginate :page => params[:page], :per_page => 18, :order => 'view_count DESC'
+    render "index"
+  end
+
   def create
     @product = Product.new(params[:product])
+    @product.update_attribute(:user_id, current_user.id)
     if @product.save
-      redirect_to products_url
+      redirect_to user_url(current_user.id)
     else
       render "new"
     end

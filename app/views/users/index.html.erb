@@ -1,5 +1,6 @@
-
-<div class="suggestions">Browse through other users to find new goodies!</div>
+<% if !current_user %>
+<div class="suggestions alert alert-info">Browse through other users to find new goodies!</div>
+<% end %>
 
 <%= will_paginate @users, :class => 'pagination pagination-centered' %>
 
@@ -11,8 +12,8 @@
   <% end %>
   		<td>
   			<li class="user-frame">
-  			<div class="user-image"><%= image_tag(user.avatar.url) %></div>
-    		<div class="user-name"><%= link_to user.username, user_path(user.id) %></div>
+  			  <div class="user-image"><%= link_to image_tag(user.avatar.url), user_path(user.id) %></div>
+          <div class="user-name"><%= link_to user.username, user_path(user.id) %></div>
     		</li>
     	</td>
   <% if (index%6) == 5 %>

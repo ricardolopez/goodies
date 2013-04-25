@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.paginate :page => params[:page], :per_page => 18, :order => :username
+    @users = User.paginate :page => params[:page], :per_page => 24, :order => :username
   end
 
   def new
@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
     @my_products = Product.find_all_by_user_id(params[:id])
+    @my_products.sort_by{|a| a.created_at }
+    @my_products.reverse!
   end
 
   def create

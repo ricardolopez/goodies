@@ -1,4 +1,9 @@
-<div class="suggestions">Log-in to add products for everyone to see!</div>
+<% if !current_user %>
+  <div class='suggestions alert alert-info'>Tip: <%= link_to "Log-in", log_in_path %> to add products for everyone to see!</div>
+<% end %>
+
+<%= will_paginate @products, :class => 'pagination pagination-centered' %>
+
 <table>
     <tbody>
   <% @products.each_with_index do |product, index| %>
@@ -19,4 +24,4 @@
 </tbody>
 </table>
 
-<%= will_paginate @products, :class => 'digg' %>
+<%= will_paginate @products,:class => 'pagination pagination-centered' %>

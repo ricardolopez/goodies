@@ -13,20 +13,75 @@
 	-webkit-border-radius: 5px 5px;
 }
 
-#main-nav {	
-	text-align: center;
-	height: 20px;
-
+p .p-desc {
+	width: 300px;
+	height: 250px;
 }
 
-#main-nav ul.nav-pills { display: inline-block; }
+#profile {
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgray;
+	-webkit-border-radius: 5px 5px;
+	margin-left: 20px;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+}
 
-#main-nav li { display: inline; }
+.profile-picture {
+	margin-top: 5px;
+}
 
-#main-nav a { float: left; }
+.user-edit {
+	width: 200px;
+	text-align: center;
+	margin-left: 20px;
+	margin-top: 5px;
+}
 
-#main-nav .hero-unit {
-	margin-top: 10px;
+.button-container {
+	width: 300px;
+}
+.button-container div {
+	float: right;
+}
+
+.button-container .actions {
+	margin-left: 10px;
+	margin-right: -15px;
+}
+
+#product-form {
+	margin-top: -40px;
+}
+
+#main-nav ul, #sub-nav ul {
+	text-align: center;
+	margin: 0 auto;	
+}
+
+#main-nav li {	
+	margin: 30px 0px 15px 0px;
+}
+
+#main-nav ul li, #sub-nav ul li {
+	display: inline-block;
+}
+
+#sub-nav {
+	margin-bottom: 10px;
+}
+
+#sub-nav li {
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgray;
+	padding: 2px 4px 2px 4px;
+}
+
+#sub-nav li a:hover {
+	background: none;
 }
 
 .user-frame, .product-frame {
@@ -64,4 +119,9 @@
 	padding-top: 90px;
 	padding-right: 5px;
 	float: right; 
+}
+
+#my_products {
+	margin-left: 250px;
+	margin-top: -227px;
 }

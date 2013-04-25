@@ -29,14 +29,26 @@
 	</div>
 	<div id="content">
 		<div id="main-nav">
-			<ul class="nav nav-pills">
-				<li><%= link_to "Products", all_products_path %></li>
-				<li><%= link_to "Users", all_users_path %></li>
+			<ul>
+				<li><%= link_to "All Users", all_users_path %></li>
+				<li><span class="divider">|</span></li>
+				<li><%= link_to "All Products", all_products_path %></li>
+				<li><span class="divider">|</span></li>
+				<li><%= link_to "Most Recent", most_recent_path %></li>
+				<li><span class="divider">|</span></li>
+				<li><%= link_to "Most Popular", most_popular_path %></li>
 			</ul>
 		</div>
+		<% if current_user %>
+			<div id="sub-nav">
+				<ul class="nav">
+				<li><%= link_to "My Products", { :controller => "users", :action => "show", :id => current_user.id } %></li>
+				<li><a href="#">My Favorites</a></li>
+				</ul>
+			</div>
+		<% end %>
 		<hr>
 		<%= yield %>
 	</div>
 </body>
 </html>
-	

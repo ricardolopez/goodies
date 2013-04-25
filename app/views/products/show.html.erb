@@ -13,5 +13,10 @@
   <%= @product.description %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<p>
+  <b>Views:</b>
+  <%= @product.view_count %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %>
 <%= link_to 'Back', products_path %>

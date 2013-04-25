@@ -1,41 +1,17 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div class="hero-unit">
+  <div id="product-form">
+  <p class="new-product">New Product:</p>
 
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@product) do |f| %>
+
+    <p><%= f.text_field :name, :placeholder => "product name" %></p>
+    <p><%= f.text_field :price,:placeholder => "product price"%></p>
+    <p><%= f.text_area :description,:placeholder => "product description", :class => "p-desc"%></p>
+    <div class="button-container">
+      <div class="actions"><%= f.submit "Create!", :class => "btn" %></div>
+      <div class="cancel"><%= link_to 'Cancel', user_path(current_user.id), :class => "btn btn-danger" %></div>
     </div>
   <% end %>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :view_count %><br />
-    <%= f.number_field :view_count %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
