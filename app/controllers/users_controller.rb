@@ -36,6 +36,8 @@ class UsersController < ApplicationController
   def update
     logger.info("*****************")
     logger.info(Paperclip.options[:command_path])
+    logger.error(ENV['S3_KEY'])
+    logger.error(ENV['S3_SECRET'])
     @user = User.find_by_id(params[:id])
 
     if @user.update_attributes(params[:user])
