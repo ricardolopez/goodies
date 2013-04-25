@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 
   if Rails.env == 'production'
     has_attached_file :avatar, :default => "/avatars/original/missing.png",
-                      :path => "cs446/rlopez/#{Rails.env}:url"
+                      :path => "cs446/rlopez/#{Rails.env}:url",
+                      :styles => { :thumb => "100x100>", :medium => "200x200>" }
   else
     has_attached_file :avatar,
       :styles => { :thumb => "100x100>", :medium => "200x200>" }
