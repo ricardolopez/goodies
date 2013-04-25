@@ -104,8 +104,13 @@ p .p-desc {
 	text-align: center;
 }
 
+.user-image img {
+	height: 100px;
+	width: 100px;
+}
+
 .user-name {
-	padding-top: 90px;
+	padding-top: 5px;
 	text-align: center;
 }
 

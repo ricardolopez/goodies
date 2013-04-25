@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   attr_accessor :password, :avatar
 
   before_save :encrypt_password
-  has_attached_file :avatar
+  has_attached_file :avatar, :default => "/avatars/original/missing.png",
+        :path => "cs446/rlopez/#{Rails.env}:url"
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
