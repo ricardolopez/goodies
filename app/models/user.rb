@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   has_attached_file :avatar, :default => "/avatars/original/missing.png",
-      :styles => { :thumb => "100x100>", :medium => "200x200>" }
+                      :path => "cs446/rlopez/#{Rails.env}:url",
+                      :styles => { :thumb => "100x100>", :medium => "200x200>" }
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
