@@ -34,11 +34,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    logger.info("*****************")
+    logger.info(Paperclip.options[:command_path])
     @user = User.find_by_id(params[:id])
 
     if @user.update_attributes(params[:user])
       redirect_to users_url, notice: 'User #{@user.username} successfully updated.' 
     else
+      logger.info(@user.errors)
       render "edit"
     end
   end

@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
     has_attached_file :avatar, :default => "/avatars/original/missing.png",
                       :path => "cs446/rlopez/#{Rails.env}:url"
   else
-    has_attached_file :avatar
+    has_attached_file :avatar,
+      :styles => { :thumb => "100x100>", :medium => "200x200>" }
   end
 
   validates_confirmation_of :password

@@ -12,7 +12,7 @@
   <% end %>
   		<td>
   			<li class="user-frame">
-  			  <div class="user-image"><%= link_to image_tag(user.avatar.url), user_path(user.id) %></div>
+  			  <div class="user-image"><%= link_to image_tag(user.avatar.url(:thumb)), user_path(user.id) %></div>
           <div class="user-name"><%= link_to user.username, user_path(user.id) %></div>
     		</li>
     	</td>
