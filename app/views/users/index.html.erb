@@ -7,16 +7,17 @@
 <table>
 	<tbody>
   <% @users.each_with_index do |user, index| %>
-  <% if (index%6) == 0 %>
+  <% if (index%5) == 0 %>
   	<tr>
   <% end %>
   		<td>
   			<li class="user-frame">
   			  <div class="user-image"><%= link_to image_tag(user.avatar.url(:thumb)), user_path(user.id) %></div>
+          <span class="user-product-count">(<%= product_count(user.id) %> products)</span>
           <div class="user-name"><%= link_to user.username, user_path(user.id) %></div>
     		</li>
     	</td>
-  <% if (index%6) == 5 %>
+  <% if (index%5) == 4 %>
   	</tr>
   <% end %>
 

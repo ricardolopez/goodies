@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_id(params[:user_id])
+    @user = User.find_by_id(Product.find(params[:id]).user_id)
     if @user == current_user
       @product = Product.find(params[:id])
     else
@@ -34,8 +34,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(params[:product])
-    @product.update_attribute(:user_id, current_user.id)
     if @product.save
+      @product.update_attribute(:user_id, current_user.id)
       redirect_to user_url(current_user.id)
     else
       render "new"

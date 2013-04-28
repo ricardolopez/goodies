@@ -1,9 +1,12 @@
 <div class="hero-unit">
+    
 <%= form_for(@user, :multipart => true) do |f| %>
     <p><%= @user.username %></p>
     <p><%= f.text_field :username, :placeholder => "Username" %></p>
     <p><%= f.text_field :first_name, :placeholder => "First Name" %></p>
     <p><%= f.text_field :last_name, :placeholder => "Last Name" %></p>
+    <p><%= f.text_field :phone, :placeholder => "Phone" %></p>
+    <p><%= f.text_field :email, :placeholder => "Email" %></p>
     <p><%= f.password_field :password, :placeholder => "Password" %></p>
     <p><%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %></p>
     <p><%= f.file_field :avatar, :placeholder => "Upload Profile Picture" %></p>

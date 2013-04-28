@@ -8,7 +8,8 @@ class Product < ActiveRecord::Base
 
   validates_presence_of :description
   validates_presence_of :name
-  validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
+  validates :price, :presence => true, :numericality => {:greater_than_or_equal_to => 0.01},
+    :format => { :with => /^\d+??(?:\.\d{0,2})?$/ }
 
   private
 

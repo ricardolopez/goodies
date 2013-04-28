@@ -1,6 +1,17 @@
-<h1>Editing product</h1>
+<div class="hero-unit">
+  <div id="product-form">
+  <p class="edit-product">Edit Product:</p>
 
-<%= render 'form' %>
+  <%= form_for(@product) do |f| %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+    <p><%= f.text_field :name, :placeholder => "name" %></p>
+    <p><%= f.text_field :price,:placeholder => "product price"%></p>
+    <p><%= f.text_area :description,:placeholder => "product description", :class => "p-desc"%></p>
+    <div class="button-container">
+      <div class="actions"><%= f.submit "Save!", :class => "btn" %></div>
+      <div class="cancel"><%= link_to 'Cancel', user_path(current_user.id), :class => "btn btn-danger" %></div>
+    </div>
+  <% end %>
+  </div>
+
+</div>

@@ -1,24 +1,23 @@
-<div id="profile">
-	<%= image_tag(@user.avatar.url, :class => "profile-picture") %>
-	<h3><%= @user.username %></h3>
-	<% if @user.first_name && @user.last_name %>
-	<p><%= @user.first_name + " " + @user.last_name %></p>
-	<% end %>
-</div>
+<div id="profile" class="hero-unit">
 
+	<div class="user-profile">
+		<div class="profile-image">
+			<%= image_tag(@user.avatar.url(:large)) %>
+		</div>
+	</div>
+	<div class="info">
+		<h4>Profile info:</h4>
+		<p>Username: <%= @user.username %></p>
+		<p>Name: <%= @user.first_name + " " + @user.last_name%></p>
+		<h4>Contact info:</h4>
+		<p>Phone: <%= @user.phone %></p>
+		<p>Email: <%= @user.email %></p>
+	</div>
 	
 <% if current_user == @user %>
 	<div class="user-edit">
-		<%= link_to 'Edit Profile', edit_user_path(@user.id) %>
+		<%= link_to 'Delete Profile', delete_user_path(:id => @user.id), :class => 'btn btn-danger' %>
+		<%= link_to 'Edit Profile', edit_user_path(@user.id), :class => 'btn btn-info' %>
 	</div>
-<% end %>
-
-
-<div id="my_products">
-	<% if current_user == @user %>
-		<div>
-			<%= link_to "Add new product", { :controller => :products, :action => :new}, :class => "btn btn-info" %>
-		</div>
-	<% end %>
-	<%= render :partial => 'products/list', :collection => @my_products %>
+<% end %>    
 </div>
