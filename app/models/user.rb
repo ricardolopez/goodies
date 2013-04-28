@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   has_attached_file :avatar, :default => "/avatars/:style/missing.png",
-                      :path => "cs446/lopez/#{Rails.env}:url",
+                      :path => "cs446/rlopez/#{Rails.env}:url",
                       :styles => { :thumb => "140x140>", :medium => "200x200>", :large => "250x250>" }
 
   validates_confirmation_of :password
