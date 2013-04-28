@@ -9,7 +9,9 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password
 
-  has_attached_file :avatar, :default => "/avatars/original/missing.png",
+  has_attached_file :avatar, :default => "/avatars/:style/missing.png",
+                      :storage => :s3,
+                      :s3_credentials => "#{Rails.env}/config/s3.yml"
                       :path => "cs446/rlopez/#{Rails.env}:url",
                       :styles => { :thumb => "140x140>", :medium => "200x200>", :large => "250x250>" }
 
