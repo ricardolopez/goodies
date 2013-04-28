@@ -225,7 +225,7 @@ p .p-desc {
 	color: green;
 }
 
-/* My Products Listing Page */
+/* My Products Listing page */
 #my_products {
 	margin: 0 auto;
 	text-align: center;
@@ -238,4 +238,8 @@ p .p-desc {
 
 #my_products .price {
 	color: green;
+}
+
+.user-edit-buttons {
+	margin-left: 85px;
 }

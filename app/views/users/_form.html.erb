@@ -10,8 +10,9 @@
     <p><%= f.password_field :password, :placeholder => "Password" %></p>
     <p><%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %></p>
     <p><%= f.file_field :avatar, :placeholder => "Upload Profile Picture" %></p>
-     <div>
-       <%= f.submit %>
+     <div class="user-edit-buttons">
+       <%= link_to "Cancel", user_path(@user.id), :class => 'btn btn-danger' %>
+       <%= f.submit "Save", :class => 'btn' %>
      </div>
 <% end %>
 </div>
