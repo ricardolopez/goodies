@@ -43,7 +43,7 @@
 			<div id="sub-nav">
 				<ul class="nav">
 				<li><%= link_to "My Profile", { :controller => "users", :action => "show", :id => current_user.id } %></li>
-				<li><a href="#">My Favorites</a></li>
+				<li><%= link_to "My Products", { :controller => "products", :action => "my_products", :id => current_user.id } %></li>
 				</ul>
 			</div>
 		<% end %>

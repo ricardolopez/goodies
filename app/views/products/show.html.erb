@@ -1,27 +1,26 @@
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+<div id="product-view" class="hero-unit">
 
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
+  <div class="product">
+    <div class="product-pic">
+      <%= image_tag(@product.avatar.url(:large)) %>
+    </div>
+  <% if current_user == @user %>
+    <div class="product-edit">
+      <%= link_to 'Delete Product', delete_product_path(:id => @product.id), :class => 'btn btn-danger' %>
+      <%= link_to 'Edit Product', edit_product_path(@product.id), :class => 'btn btn-info' %>
+    </div>
+  <% end %>    
+  </div>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Views:</b>
-  <%= @product.view_count %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%= @product.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %>|
-<%= link_to 'Back', products_path %>
+  <div class="product-info">
+    <p>Product Name:</p>
+    <p class="info"><%= @product.name %></p>
+    <p>Created by:</p>
+    <p class="info"><%= link_to creator(@product.id).username, user_url(creator(@product.id).id) %></p>
+    <p>Price:</p>
+    <p class="info price"><%= number_to_currency(@product.price) %></p>
+    <p>Description:</p>
+    <p class="info"><%= @product.description %></p>
+  </div>
+  
+</div>

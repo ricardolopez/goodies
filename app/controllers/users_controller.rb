@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by_id(params[:id])
     if @user != current_user
-      redirect_to users_url, notice: 'Cannot edit this profile!'
+      redirect_to users_url
     end
   end
 
@@ -40,9 +40,8 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
 
     if @user.update_attributes(params[:user])
-      redirect_to users_url, notice: 'User #{@user.username} successfully updated.' 
+      redirect_to users_url
     else
-      logger.info(@user.errors)
       render "edit"
     end
   end

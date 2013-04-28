@@ -19,5 +19,9 @@
 		<%= link_to 'Delete Profile', delete_user_path(:id => @user.id), :class => 'btn btn-danger' %>
 		<%= link_to 'Edit Profile', edit_user_path(@user.id), :class => 'btn btn-info' %>
 	</div>
+<% else %>
+	<div class="user-option">
+		<%= link_to 'View user\'s products', user_products_path(:id => @user.id), :class => 'btn btn-info' %>
+	</div>
 <% end %>    
 </div>

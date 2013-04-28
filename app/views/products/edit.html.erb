@@ -9,7 +9,7 @@
     <p><%= f.text_area :description,:placeholder => "product description", :class => "p-desc"%></p>
     <div class="button-container">
       <div class="actions"><%= f.submit "Save!", :class => "btn" %></div>
-      <div class="cancel"><%= link_to 'Cancel', user_path(current_user.id), :class => "btn btn-danger" %></div>
+      <div class="cancel"><%= link_to 'Cancel', my_products_path(current_user.id), :class => "btn btn-danger" %></div>
     </div>
   <% end %>
   </div>
