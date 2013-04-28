@@ -13,7 +13,7 @@ end
 
 group :production do
 	gem 'pg'
-	# gem 'rmagick'
+	gem 'rmagick'
 end
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
