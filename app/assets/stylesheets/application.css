@@ -43,6 +43,16 @@
 	background: none;
 }
 
+.joke {
+	text-align: center;
+	font-size: 12px;
+	padding-top: 10px;
+	margin-bottom: -25px;	
+}
+
+.joke .funny {
+	color: green;
+}
 
 
 /* Product Form */

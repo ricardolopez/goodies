@@ -13,7 +13,6 @@ end
 
 group :production do
 	gem 'pg'
-	gem 'rmagick'
 end
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -21,6 +20,7 @@ gem 'paperclip', "~> 3.0"
 gem 'will_paginate', "~> 3.0"
 gem 'bootstrap-will_paginate'
 gem 'aws-sdk'
+gem 'activeresource'
 
 # Gems used only for assets and not required
 # in production environments by default.
